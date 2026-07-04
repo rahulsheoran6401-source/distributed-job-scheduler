@@ -1,0 +1,45 @@
+# Task List - Job Scheduler System
+
+- `[x]` **Phase 1: Infrastructure & Core Setup**
+  - `[x]` Initialize monorepo structure (npm workspaces).
+  - `[x]` Setup `docker-compose.yml` (PostgreSQL, Redis) with health checks.
+  - `[x]` Setup GitHub Actions CI workflow.
+  - `[x]` Define Prisma schema with complete models and indexes.
+  - `[x]` Create database seed scripts.
+- `[x]` **Phase 2: Core API & Authentication**
+  - `[x]` Setup Express API with TypeScript, Pino, and Zod env validation.
+  - `[x]` Implement Health Check endpoints (`/health`, `/ready`, `/metrics`).
+  - `[x]` Implement Helmet, CORS, and Graceful Shutdown.
+  - `[x]` Implement Request Correlation IDs middleware.
+  - `[x]` Implement Standardized API Response formats (Success & Error handling).
+  - `[x]` Implement JWT Authentication, bcrypt, & Redis Rate Limiting.
+  - `[x]` Setup Swagger/OpenAPI documentation.
+- `[x]` **Phase 3: Project, Queue, and Audit APIs**
+  - `[x]` Org, Project, and Queue CRUD endpoints (Repository Pattern).
+  - `[x]` Audit Logging implementation (using Correlation IDs).
+  - `[x]` Notification Service implementation.
+- `[x]` **Phase 4: Job Management & Dependencies**
+  - `[x]` Job creation with Idempotency Keys.
+  - `[x]` Job dependencies logic.
+  - `[x]` Job action APIs (Cancel, Pause, Resume, Retry).
+- `[x]` **Phase 5: Scheduler Service & Worker Service**
+  - `[x]` Scheduler Service (promotion of delayed/recurring jobs).
+  - `[x]` Track Scheduler Metrics (Queue latency, idle time, etc.).
+  - `[x]` Worker Service polling loop (`SELECT FOR UPDATE SKIP LOCKED`).
+  - `[x]` Worker automatic registration/unregistration.
+  - `[x]` Worker queue ordering strategy (Queue Priority -> Job Priority -> Time).
+  - `[x]` Worker Heartbeat & Crash Recovery.
+  - `[x]` Dead Letter Queue routing.
+- `[x]` **Phase 6: Observability & Real-time**
+  - `[x]` Socket.IO integration with Redis Pub/Sub.
+  - `[x]` Execution Logging and Analytics aggregations.
+- `[x]` **Phase 7: Frontend Dashboard**
+  - `[x]` React + Vite + Tailwind setup.
+  - `[x]` UI Components (shadcn/ui).
+  - `[x]` Pages (Dashboard, Projects, Queues, Jobs, Workers, DLQ, Monitoring).
+  - `[x]` Real-time WebSocket connection.
+- `[x]` **Phase 8: Polish & Documentation**
+  - `[x]` ESLint, Prettier, Husky setup.
+  - `[x]` Document DB Migrations, Backup, Restore strategies.
+  - `[x]` Document Folder Structure and Performance Targets.
+  - `[x]` Feature Flags implementation logic.
