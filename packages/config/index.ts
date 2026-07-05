@@ -1,25 +1,7 @@
 import { z } from 'zod';
 import dotenv from 'dotenv';
-import path from 'path';
-import fs from 'fs';
 
-// Dynamically find the root .env file regardless of current working directory or compilation output
-let currentDir = __dirname;
-let envPath = '';
-while (currentDir !== path.parse(currentDir).root) {
-  const possiblePath = path.join(currentDir, '.env');
-  if (fs.existsSync(possiblePath)) {
-    envPath = possiblePath;
-    break;
-  }
-  currentDir = path.resolve(currentDir, '..');
-}
-
-if (envPath) {
-  dotenv.config({ path: envPath });
-} else {
-  dotenv.config(); // Fallback
-}
+dotenv.config();
 
 const envSchema = z.object({
   NODE_ENV: z.enum(['development', 'production', 'test']).default('development'),
